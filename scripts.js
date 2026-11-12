@@ -20,9 +20,9 @@ const convertValues = async () => {
     const data = await fetch('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,GBP-BRL').then(response => response.json())
     
     const realToday = 1.0
-    const dolarToday = Number(data.USDBRL.bid)
-    const euroToday = Number(data.EURBRL.bid)
-    const libraToday = Number(data.GBPBRL ? data.GBPBRL.bid : 7.03) // Caso a API não retorne GBP, usa um fallback
+    const dolarToday = Number(data.USDBRL.high)
+    const euroToday = Number(data.EURBRL.high)
+    const libraToday = Number(data.GBPBRL ? data.GBPBRL.high : 7.03) // Caso a API não retorne GBP, usa um fallback
 
     let valueInReal = 0
 
